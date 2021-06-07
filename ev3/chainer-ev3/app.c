@@ -165,7 +165,7 @@ void main_task(intptr_t unused) {
                                 // motor_rotate
                                 if (cmd_id == 300) {
                                                 int     port      = read_byte(serial);
-                                                in    t derection = read_byte(serial);
+                                                int     derection = read_byte(serial);
                                                 uint8_t speed     = read_byte(serial);
                                                 ev3_motor_rotate(port, derection, speed, false);
                                 }
