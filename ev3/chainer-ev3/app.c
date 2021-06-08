@@ -167,6 +167,8 @@ void main_task(intptr_t unused) {
                                                 int     port      = read_byte(serial);
                                                 int     derection = read_byte(serial);
                                                 uint8_t speed     = read_byte(serial);
+                                                // for debug
+                                                ev3_lcd_draw_string("%d %d %d %d", 300, port, derection, speed);
                                                 ev3_motor_rotate(port, derection, speed, false);
                                 }
 
@@ -174,6 +176,8 @@ void main_task(intptr_t unused) {
                                 if (cmd_id == 301) {
                                                 int port  = read_byte(serial);
                                                 int power = read_byte(serial);
+                                                // for debug
+                                                ev3_lcd_draw_string("%d %d %d", 301, port, power);
                                                 ev3_motor_set_power(port, power);
                                 }
 
