@@ -170,7 +170,7 @@ void main_task(intptr_t unused) {
                                                 // for debug
                                                 char buf[13];
                                                 snprintf(buf, 13, "%d %d %d %d", 300, port, derection, speed);
-                                                ev3_lcd_draw_string(buf);
+                                                ev3_lcd_draw_string(buf, 1, 1);
                                                 ev3_motor_rotate(port, derection, speed, false);
                                 }
 
@@ -181,7 +181,7 @@ void main_task(intptr_t unused) {
                                                 // for debug
                                                 char buf[13];
                                                 snprintf(buf, 13, "%d %d %d", 301, port, power);
-                                                ev3_lcd_draw_string(buf);
+                                                ev3_lcd_draw_string(buf, 1, 2);
                                                 ev3_motor_set_power(port, power);
                                 }
 
