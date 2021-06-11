@@ -163,9 +163,9 @@ void main_task(intptr_t unused) {
 
                                 // My program↓
                                 // motor_rotate
-                                if (cmd_id == 300) {
-                                                int     port      = read_byte(serial);
-                                                int     derection = read_byte(serial);
+                                if (cmd_id == 210) {
+                                                uint8_t port      = read_byte(serial);
+                                                uint8_t derection = read_byte(serial);
                                                 uint8_t speed     = read_byte(serial);
                                                 // for debug
                                                 char buf[13];
@@ -175,9 +175,9 @@ void main_task(intptr_t unused) {
                                 }
 
                                 // motor_set_power
-                                if (cmd_id == 301) {
-                                                int port  = read_byte(serial);
-                                                int power = read_byte(serial);
+                                if (cmd_id == 211) {
+                                                uint8_t port  = read_byte(serial);
+                                                uint8_t power = read_byte(serial);
                                                 // for debug
                                                 char buf[13];
                                                 snprintf(buf, 13, "%d %d %d", 301, port, power);
