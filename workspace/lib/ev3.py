@@ -220,7 +220,12 @@ class EV3():
 	def motor_rotate(self, motor_port, derection, speed):
 		self._send_header(220)
 		self._write([motor_port, derection, speed])
-
+        
+    def motor_set_power(self, motor_port, power):
+        self._send_header(221)
+        self.write([motor_port, power])
+        
+        
 	def sensor_config(self, sensor_port, sensor_type):
 		self._send_header(100)
 		self._write([sensor_port, sensor_type])
