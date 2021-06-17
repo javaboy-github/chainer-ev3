@@ -223,7 +223,7 @@ class EV3():
         
         def motor_set_power(self, motor_port, power):
                 self._send_header(221)
-                self._write([motor_port, motor_port, max(min(power + 100, 0), 200)])
+                self._write([motor_port, max(min(power + 100, 0), 200)])
         
         
         def sensor_config(self, sensor_port, sensor_type):
