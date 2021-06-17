@@ -219,11 +219,11 @@ class EV3():
 
         def motor_rotate(self, motor_port, derection, speed):
                 self._send_header(220)
-                self._write([motor_port, max(min(derection + 100, 0), 200), speed])
+                self._write([motor_port, min(max(derection + 100, 0), 200), speed])
         
         def motor_set_power(self, motor_port, power):
                 self._send_header(221)
-                self._write([motor_port, max(min(power + 100, 0), 200)])
+                self._write([motor_port, min(max(power + 100, 0), 200)])
         
         
         def sensor_config(self, sensor_port, sensor_type):
